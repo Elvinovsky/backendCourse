@@ -36,12 +36,33 @@ app.get('/courses/:id', (req, res) => {
     }
 });
 app.post('/courses', (req, res) => {
+    if (!req.body.title) {
+        res.sendStatus(400);
+        return;
+    }
     const createCourse = {
         id: +(new Date()),
         title: req.body.title
     };
     db.courses.push(createCourse);
-    res.json(createCourse);
+    res
+        .status(201)
+        .json(createCourse);
+});
+app.delete('/courses/:id', (req, res) => {
+    db.courses = db.courses.filter(c => c.id !== +req.params.id);
+    res.sendStatus(204);
+});
+app.put('/courses/:id', (req, res) => {
+    const foundCourse = db.courses.find(c => c.id === +req.params.id);
+    if (!foundCourse) {
+        res.sendStatus(404);
+        return;
+    }
+    else {
+        foundCourse.title = req.body.title;
+        res.sendStatus(204);
+    }
 });
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`);
