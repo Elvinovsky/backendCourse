@@ -1,12 +1,13 @@
 {
-  "name": "backendCourse",
+  "name": "backend-course",
   "version": "1.0.0",
   "main": "src/index.ts",
   "author": "Agakerimov Elvin <shipagakerimov@mail.ru>",
   "license": "MIT",
   "scripts": {
     "watch": "tsc -w",
-    "dev": "nodemon dist/03lessonServer.js"
+    "dev": "nodemon dist/03lessonServer.js",
+    "dev3": "nodemon dist/04lessonServer.js"
   },
   "dependencies": {
     "express": "^4.18.2"
