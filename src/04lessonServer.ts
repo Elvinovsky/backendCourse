@@ -57,8 +57,13 @@ app.post('/courses', (req, res) => {
         .json(createCourse)
 })
 app.delete('/courses/:id', (req, res) => {
-    db.courses = db.courses.filter(c => c.id !== +req.params.id);
+    const foundCourse = db.courses.find(c => c.id === +req.params.id);
+    if (!foundCourse) {
+        res.sendStatus(HTTP_STATUSES.NOT_FOUND_404);
+        return;
+    }
 
+    db.courses = db.courses.filter(c => c.id !== +req.params.id);
     res.sendStatus(HTTP_STATUSES.NO_CONTENT_204)
 })
 app.put('/courses/:id', (req, res) => {

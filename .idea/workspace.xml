@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f1f1cf4b-4766-416d-ad2d-1ace477ee749" name="Changes" comment="'workspace add'">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/04lessonServer.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/04lessonServer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/04lessonServer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/04lessonServer.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -83,8 +84,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.watch" />
         <item itemvalue="npm.dev3" />
+        <item itemvalue="npm.watch" />
         <item itemvalue="npm.dev" />
       </list>
     </recent_temporary>
@@ -114,6 +115,8 @@
       <workItem from="1677085838834" duration="2000" />
       <workItem from="1677096888411" duration="2931000" />
       <workItem from="1677106257023" duration="3671000" />
+      <workItem from="1677112161188" duration="164000" />
+      <workItem from="1677162562588" duration="1159000" />
     </task>
     <servers />
   </component>
