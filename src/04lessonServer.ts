@@ -23,12 +23,12 @@ const db = {
 app.get('/', (req, res) => {
     res.send({message: 'IT-INCUBATOR.RU'})
 })
-app.get('/courses', (req, res) => {
+app.get('/courses', (req, res) => { // на данном этапе создаем возможность фильтровать клиентом курсы
     let foundCourses = db.courses;
-    if (req.query.title) {
-        foundCourses = foundCourses
-            .filter(c => c.title.indexOf(req.query.title as string) > -1)
-    }
+    if (req.query.title) { // чтобы фильтрация при пустом title вернула весь массив кусов устанавливаем логическую функцию.
+        foundCourses = foundCourses // выносим фильтрацию в отдельную переменную.
+            .filter(c => c.title.indexOf(req.query.title as string) > -1) // фильтры всегда гибкие, поэтому используем query-параметры для фильтрации "?", "&"
+    }// при этом учитываем "частичное вхождение"
 
     res.json(foundCourses)
 })
